@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import List from "./components/List";
+import { ShowVideo } from "./components/ShowVideo";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+interface IPeople {
+          id: number,
+          fullName: string,
+          age: number,
+          img_url:string,
+          bio?:string
+  }
+
+  const App = ()=> {
+  const [people , setPeople] = useState<IPeople[]>([ {id: 10, fullName: 'Mohammad', age: 37, img_url:'', bio:''}]
+  )
+
+
+const [picture , setPicture] = useState<string>('');
+const [PI , setPi] = useState<number>(3.14159);
+
+const run =()=>{
+  setPicture("https://krydder.bib.no/1087/10964838.bilde.1545476188.n.jpg");
+}
+
+   return (
+    <div className="container">
+    <h4 className="alert alert-info">persons management</h4>
+    <List people={people}/>
+    <ShowVideo link={picture} PI={PI}/>
+    <button onClick={run}>insert Video</button>
+
     </div>
   );
 }
