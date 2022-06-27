@@ -1,34 +1,32 @@
 import { useState } from "react";
+import AddPeople from "./AddPeople";
 import List from "./components/List";
-import { ShowVideo } from "./components/ShowVideo";
-
-interface IPeople {
+export interface IPeople {
           id: number,
           fullName: string,
-          age: number,
+          age: number ,
           img_url:string,
           bio?:string
   }
 
   const App = ()=> {
-  const [people , setPeople] = useState<IPeople[]>([ {id: 10, fullName: 'Mohammad', age: 37, img_url:'', bio:''}]
+
+  const [people , setPeople] = useState<IPeople[]>([ {id: 10, fullName: 'Mohammad Ghasempour', age: 37,
+       img_url:'https://avatars.githubusercontent.com/mohammad-ghasempour', bio:'Frontend developer'}]
   )
 
 
-const [picture , setPicture] = useState<string>('');
-const [PI , setPi] = useState<number>(3.14159);
 
-const run =()=>{
-  setPicture("https://krydder.bib.no/1087/10964838.bilde.1545476188.n.jpg");
-}
+  
 
    return (
     <div className="container">
     <h4 className="alert alert-info">persons management</h4>
     <List people={people}/>
-    <ShowVideo link={picture} PI={PI}/>
-    <button onClick={run}>insert Video</button>
+    <AddPeople people={people} setPeople={setPeople} />
 
+    <button onClick={()=>{setPeople([...people , {id: 11, fullName: 'Ghasempour', age: 35557,
+  img_url:'https://avatars.githubusercontent.com/mohammad-ghasempour', bio:'Frloper'}    ])  }}>click</button>
     </div>
   );
 }
