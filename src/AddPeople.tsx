@@ -22,6 +22,7 @@ const AddPeople: FC<Iprops> = ({people , setPeople}) => {
         setBio('');
     }
 
+    
     const handleSubmit = (e:FormEvent<HTMLFormElement>):void=> {
         e.preventDefault();
 
@@ -36,7 +37,7 @@ const AddPeople: FC<Iprops> = ({people , setPeople}) => {
         }
         
         setPeople([...people , {
-            id:2,
+            id: Math.floor(Math.random() * 1000000),
             fullName,
             age: Number(age),
             img_url,

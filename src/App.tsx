@@ -22,11 +22,9 @@ export interface IPeople {
    return (
     <div className="container">
     <h4 className="alert alert-info">persons management</h4>
-    <List people={people}/>
+    <List people={people} setPeople = {setPeople} />
     <AddPeople people={people} setPeople={setPeople} />
 
-    <button onClick={()=>{setPeople([...people , {id: 11, fullName: 'Ghasempour', age: 35557,
-  img_url:'https://avatars.githubusercontent.com/mohammad-ghasempour', bio:'Frloper'}    ])  }}>click</button>
     </div>
   );
 }
