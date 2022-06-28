@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const List: FC<IProps> = ({ people , setPeople }) => {
-
+// changes
 const handleDeletePeople = (id:number):void=>{
     const persons = [... people];
     const filteredPeople = persons.filter((person)=> person.id !== id)
