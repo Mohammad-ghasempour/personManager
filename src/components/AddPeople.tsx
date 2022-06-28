@@ -1,5 +1,5 @@
 import { useState , FormEvent, FC , Dispatch} from "react";
-import { IPeople } from "./App";
+import { IPeople } from "../App";
 
 
 interface Iprops{

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddPeople from "./AddPeople";
+import AddPeople from "./components/AddPeople";
 import List from "./components/List";
 export interface IPeople {
           id: number,
@@ -14,10 +14,6 @@ export interface IPeople {
   const [people , setPeople] = useState<IPeople[]>([ {id: 10, fullName: 'Mohammad Ghasempour', age: 37,
        img_url:'https://avatars.githubusercontent.com/mohammad-ghasempour', bio:'Frontend developer'}]
   )
-
-
-
-  
 
    return (
     <div className="container">
